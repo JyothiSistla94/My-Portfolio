@@ -1,0 +1,457 @@
+.App {
+  text-align: center;
+  justify-content: center;
+  --color1: white;
+  --color2: black;
+  --color3: red;
+  --color4: orange;
+  box-sizing: border-box;
+  background-image: url("https://img.freepik.com/premium-photo/laptop-sits-wooden-table-with-glass-wine_1124573-33014.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color2);
+  position: fixed;
+  color: var(--color1);
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.App-logo{
+  width: 100px;
+  height: fit-content;
+}
+
+nav ul{ 
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.menu{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu li{padding: 15px;}
+
+.menu a{
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.menu a:hover{
+  color: var(--color2);
+  background-color: var(--color1);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.menu a.active{
+  text-decoration: underline;
+}
+
+.open-menu, .close-menu{
+  position: absolute;
+  color: var(--color1);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+  margin-right: 25px;
+}
+
+.open-menu{
+  top: 10px;
+  right: 10px;
+}
+
+.close-menu{
+  top: 30px;
+  right: 10px;
+}
+
+#check{display: none;}
+
+@media (max-width: 768px) {
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    transition: 0.3s ease-in-out;
+    background: var(--color2);
+  }
+
+  .menu li {
+    margin-top: 5px;
+  }
+
+  .menu li a{
+    padding: 2px;
+  }
+
+  .open-menu, .close-menu{
+    display: block;
+  }
+
+  #check:checked ~ .menu{
+    right: 0;
+
+  }
+}
+
+section{
+  padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+section div{max-width: 600px;}
+
+.home{justify-content: space-around;}
+
+@media (max-width: 610px) {
+  .home{flex-wrap: wrap-reverse;}
+}
+
+h3{
+  color: var(--color1);
+  text-shadow: 0 0 5px var(--color2), 
+  0 0 10px var(--color2),
+  0 0 20px var(--color2), 
+  0 0 40px var(--color2), 
+  0 0 80px var(--color2),
+  0 0 160px var(--color2), 0 0 320px var(--color2);
+}
+
+h1{
+  color: var(--color3);
+  font-size: 40px;
+  text-shadow: 0 0 5px var(--color2), 
+  0 0 10px var(--color2),
+  0 0 20px var(--color2), 
+  0 0 40px var(--color2), 
+  0 0 80px var(--color2),
+  0 0 160px var(--color2);
+}
+
+p{
+  color: var(--color1);
+  text-shadow: 0 0 5px var(--color2), 
+  0 0 10px var(--color2),
+  0 0 20px var(--color2), 
+  0 0 40px var(--color2), 
+  0 0 80px var(--color2),
+  0 0 160px var(--color2);
+}
+
+.home .text{
+  color: var(--color3);
+  text-shadow: 0 0 5px var(--color2), 
+  0 0 10px var(--color2),
+  0 0 20px var(--color2), 
+  0 0 40px var(--color2), 
+  0 0 80px var(--color2),
+  0 0 160px var(--color2);
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 5px 1px 5px;
+  gap: 30px;
+}
+
+@media (max-width:610px){
+  .icons{flex-wrap: wrap;}
+}
+
+.icons a{
+  color: var(--color1);
+  border: 2px solid var(--color1);
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.icons a:hover{
+  color: var(--color2);
+  background: var(--color1);
+}
+
+.image{
+  height: 300px;
+  width: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color1);
+  box-shadow: 0 0 5px var(--color1), 
+  0 0 10px var(--color1);
+}
+
+.services{gap: 30px;}
+
+h2{
+  color: var(--color4);
+  text-shadow: 0 0 5px var(--color2),
+  0 0 10px var(--color2),
+  0 0 25px var(--color2), 
+  0 0 50px var(--color2), 
+  0 0 100px var(--color2);
+}
+
+.skills{gap: 5rem;}
+
+.tech{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin-top: -70px;
+}
+
+.radial{
+  width: 150px;
+  height: 170px;
+  position: relative;
+}
+
+.radial svg{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) rotate(-90deg);
+  width: 250px;
+  height: 200px;
+}
+
+.progress_bar{
+  stroke-width: 10;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-tech 1s linear forwards;
+}
+
+@keyframes animate-tech{
+  100%{stroke-dashoffset: -1;}
+}
+
+.path{
+  stroke-width: 10;
+  stroke: var(--color4);
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  stroke-linecap: round;
+}
+
+.path1{animation: animate-path1 3s linear forwards;}
+.path2{animation: animate-path2 3s linear forwards;}
+.path3{animation: animate-path3 3s linear forwards;}
+.path4{animation: animate-path4 3s linear forwards;}
+.path5{animation: animate-path5 3s linear forwards;}
+
+@keyframes animate-path1{
+  /* for 90% */
+  100%{stroke-dashoffset: 37;}
+}
+
+@keyframes animate-path2{
+  /* for 80 */
+  100%{stroke-dashoffset: 75;}
+}
+
+@keyframes animate-path3{
+  /* for 75% */
+  100%{stroke-dashoffset: 95;}
+}
+
+@keyframes animate-path4{
+  /* for 95% */
+  100%{stroke-dashoffset: 19;}
+}
+
+@keyframes animate-path5{
+  /* for 60% */
+  100%{stroke-dashoffset: 150;}
+}
+
+.percent{
+  position: absolute;
+  color: var(--color1);
+  top: 80%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.non-tech{
+  color: var(--color1);
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 30px;
+  max-width: 500px;
+  text-wrap: nowrap;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  color: var(--color1);
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.percent-bar {
+  position: relative;
+  border-radius: 20px;
+  width: 250px;
+  height: 25px;
+  background: var(--color3);
+  overflow: hidden;
+  animation: animate-non-tech 3s ease-in-out forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+  color: var(--color2);
+}
+
+@keyframes animate-non-tech{
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+
+.percent-bar span {
+  height: 100%;
+  background: var(--color4);
+  border-radius: 20px;
+  animation: animate-non-tech 3s ease-in-out forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+  display: block;
+}
+
+.create-bar span {width: 90%;}
+.communication-bar span{width: 90%;}
+.team-bar span{width: 100%;}
+.email-bar span{width: 95%;}
+.live-bar span{width: 90%;}
+.ch-bar span{width: 95%;}
+.prd-bar span{width: 90%;}
+.cr-bar span{width: 80%;}
+.os-bar span{width: 80%;}
+.ct-bar span{width: 80%}
+.ar-bar span{width: 95%}
+.rs-bar span{width: 95%}
+
+.project{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pimg{
+  width: 200px;
+  height: 70px;
+}
+
+.button{
+  color: var(--color1);
+  background-color: var(--color2);
+  text-decoration: none;
+  border: 2px solid var(--color1);
+  padding: 10px;
+  border-radius: 40px;
+  font-weight: 700;
+}
+
+.button:hover{
+  color: var(--color2);
+  background: var(--color1);
+}
+
+.work li{
+  text-align: left;
+  color: var(--color1);
+  text-shadow: 0 0 5px var(--color2), 
+  0 0 10px var(--color2),
+  0 0 20px var(--color2), 
+  0 0 40px var(--color2), 
+  0 0 80px var(--color2),
+  0 0 160px var(--color2);
+}
+
+.intern{gap: 25px;}
+
+form{
+  justify-content: center;
+  align-items: center;
+  gap : 30px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+form div{
+  padding: 25px;
+  border: 2px solid var(--color1);
+  border-radius: 30px;
+}
+
+.input-container {
+  position: relative;
+  width: 250px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px;
+  justify-content: center;
+  border: none;
+}
+
+.input-container input {
+  padding: 12px 10px;
+  font-size: 16px;
+  border: 2px solid var(--color1);
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color2);
+  color: var(--color1);
+  margin-bottom: 10px;
+}
+
+.input-container input::placeholder {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  color: var(--color1);
+}
+
+.input-container input:focus::placeholder {
+  transform: translateY(-100%);
+  font-size: 12px;
+  color: var(--color4);
+}
